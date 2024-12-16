@@ -14,19 +14,18 @@ function generateBars() {
 
 function drawBars() {
     const container = document.getElementById('arrayContainer');
-    container.innerHTML = ''; // Clear any previous bars
-    const maxValue = Math.max(...array); // Get the maximum value to scale bar height
-
+    container.innerHTML = ''; 
+    const maxValue = Math.max(...array);
     array.forEach((value) => {
         const bar = document.createElement('div');
-        let height = (value / maxValue) * 500; // Scale bar height based on the max value
-        height = Math.max(height, 50); // Set a minimum height for bars
+        let height = (value / maxValue) * 500; 
+        height = Math.max(height, 50);
         bar.style.height = height + 'px';
         bar.classList.add('bar');
 
         const valueLabel = document.createElement('span');
         valueLabel.textContent = value;
-        valueLabel.classList.add('bar-value'); // Attach a class to position the label
+        valueLabel.classList.add('bar-value');
         bar.appendChild(valueLabel);
 
         container.appendChild(bar);
